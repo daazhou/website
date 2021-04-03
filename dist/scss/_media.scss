@@ -1,0 +1,129 @@
+//Tablet and Small Phones, 800px max
+@media(max-width: 800px){
+  #header-home{
+    // decreasesing the viewport heigh to rem from the main screen res
+    height: 30rem;
+    
+    .header-content{
+      padding-top: 5rem;
+    }
+  }
+}
+
+//smartphones
+@media(max-width:500px){
+  #main-nav{
+    flex-direction: column;
+    align-items: center;
+
+    li{
+      padding: 1rem;
+    }
+  }
+
+  #header{
+    &-home{
+      height: 10rem;
+      border-bottom: 3px solid $main-color;
+      background-position: 20% 30%;
+
+      // hides header-content (typewriter text)
+      .header-content{
+        display: none;
+      }
+    }
+
+    &-inner{
+      height: 10rem;
+    }
+  }
+
+  // stack grid columns for media query, stacking all items and content to one column to stream line content
+  #home-a .specials,
+  #home-b .stats, 
+  #home-c .process,
+  .items{
+    grid-template-columns: 1fr;
+  }
+
+  // #home{
+  //   // &-c{
+  //   //   .specials div{
+  //   //     border-bottom: 1px $light-color solid;
+  //   //     padding-bottom: 1rem;
+
+  //   //     &:last-child{
+  //   //       border:none;
+  //   //       padding-bottom: 0;
+  //   //     }
+  //   //   }
+  //   // }
+  // }
+
+  #about{
+    &-a{
+      .about-info{
+        // grabbing the bio image to fix the styling for mobile view
+        grid-template-areas: 
+        'bioimage'
+        'bio'
+        ;
+      }
+    }
+    &-c{
+      .about-logos{
+      grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  // contact media query
+  #contact{
+    &-a{
+      .text-fields{
+        grid-template-areas: 
+        'name'
+        'email'
+        'subject'
+        'phone'
+        'message'
+        ;
+      }
+    }
+
+    &-c{
+      h1{
+        font-size: 2rem;
+      }
+    }
+  }
+
+  // footer media query styling
+  #main-footer{
+    height: 7rem;
+      // set footer to a column where the buttons and content is aligned
+    .footer-content{
+        flex-direction: column;
+        padding: 1rem;
+        height: 5rem;
+      }
+  }
+}
+
+// button landscape
+@media(max-height:580px){
+  #header-home{
+    .header-content{
+      padding-top: 3rem;
+    }
+  }
+}
+@media(max-height:330px){
+  #header-home{
+    .header-content{
+     h1{
+       font-size: 1.5rem;
+     }
+    }
+  }
+}

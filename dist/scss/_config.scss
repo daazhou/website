@@ -1,0 +1,18 @@
+// variables
+$website-width: 1280px;
+$main-color: #6470e2;
+$light-color: #f4f4f4;
+$dark-color: #333;
+$medium-color: #ccc;
+// showcase image on default, needs to be changed later
+$bg-image: url('../img/thebay.jpg');
+
+
+// set text color to implement, changes the lightness or darkness of a background
+@function set-text-color($color){
+  @if(lightness($color)>50){
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
